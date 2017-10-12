@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<title>Verdant Technollogies</title>
+	<link rel="stylesheet" type="text/css" href="_css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="_css/style.css">
+	<link rel="stylesheet" type="text/css" href="_css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="_css/ng-bootstrap-submenu.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Cantarell" rel="stylesheet">
+    <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+	<script src="_js/angular.min.js"></script>
+    <script src="_js/angular-route.js"></script>
+	<script src="_js/angular-animate.js"></script>
+    <script src="_js/angular-sanitize.js"></script>
+    <!-- // <script src="_js/ng-bootstrap-submenu.min.js"></script> -->
+	<script src="_js/ui-bootstrap-tpls-2.5.0.min.js"></script>
+	<script type="text/javascript" src="_js/myapp.js"></script>
+</head>
+<body ng-app="verdantapp">
+
+	<header>
+		<nav class="navbar navbar-default" role="navigation">
+            <div class="container"  ng-controller="navCtrl">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" ng-click="isNavCollapsed = !isNavCollapsed">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a href="#!index" class="navbar-brand" href="#!index"><img src="_img/verdant.svg" class="img-responsive" width="200" alt=""></a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" uib-collapse="isNavCollapsed">
+                    <ul class="nav navbar-nav  navbar-right">
+                        <li><a href="#!index">Home</a></li>
+
+                        <li  class="btn-group" uib-dropdown>
+                          <a type="button" class="btn dropdown-toggle" uib-dropdown-toggle >
+                            Who We are <span class="caret"></span>
+                          </a>
+                          <ul class="dropdown-menu" uib-dropdown-menu role="menu">
+                            <li><a href="#!about">About Verdant</a></li>
+                            <!-- <li><a href="#!testimonial">Testimonials</a></li> -->
+                          </ul>
+                        </li>
+
+                        <!-- <li  class="btn-group" uib-dropdown>
+                          <a type="button" class="btn dropdown-toggle" uib-dropdown-toggle >
+                            F.A.Q.s <span class="caret"></span>
+                          </a>
+                          <ul class="dropdown-menu" uib-dropdown-menu role="menu">
+                            <li><a href="#!flameblocfaq">Flambloc</a></li>
+                            <li><a href="#!testimonial">Aqua Condtioners</a></li>
+                          </ul>
+                        </li>  -->                       
+
+                        <li class="dropdown" uib-dropdown is-open="status.isopen">
+                            <a class="dropdown-toggle" uib-dropdown-toggle role="button">Products <span class="caret"></span></a>
+                            <ul class="dropdown-menu" uib-dropdown-menu>
+                                <li class="flamebloctitle">Flamebloc</li>
+                                <li><a href="#!flameblocGS101">Flamebloc GS 101</a></li>
+                                <li><a href="#!flameblocGS200">Flamebloc GS 200</a></li>
+                                <li><a href="#!flameblocGS500">Flamebloc GS 500</a></li>
+                                <li><a href="#!501">Bulab 501</a></li>
+                                <li><a href="#!m1">Busan 11-M1</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li class="aquatitle">Aqua Conditioners</li>
+                                <li><a href="#!abtAqua">About Aqua Conditioners</a></li>
+                                <li><a href="#!AquaProducts">Aqua Products</a></li>
+                                <li><a href="#!Aquafaq">F.A.Q's</a></li>
+                                <li><a href="#!Aquacase">Case Studies</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#!videos">Videos</a></li>
+                        <li><a href="#!contact">Contact</a></li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+		<div class="container-fluid bannerBg"><span><img src="_img/banner.jpg" alt=""></span></div>
+	</header>
+
+<!-- 	<div class="col-md-12">
+		<a href="#!index"><div class="col-md-2 home"></div></a>
+		<a href="#!red"><div class="col-md-2 red"></div></a>
+		<a href="#!green"><div class="col-md-2 green"></div></a>
+		<a href="#!orange"><div class="col-md-2 orange"></div></a>
+	</div> -->
+
+	<div class="row">
+		<div class="container"><div ng-view  class="slide"></div></div>
+	</div>
+
+	<div class="row">
+		<div class="container">
+			<footer class="col-md-12">
+            <div class="pull-right">copyright reserved 2017 | Powered by <a href="www.arack.in" target="_blank">ARACK</a></div>
+			</footer>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<div class="row" style="margin-top:-100px;">
+	<div class="container">
+		<div class="col-md-12 contentTab" style="padding-top:20px;">
+			<div class="col-md-12" style="margin-bottom:20px;">
+				<h3>Get In Touch With us</h3>
+			</div>
+
+			<div class="col-md-12">
+				<div class="col-md-4 address">
+					<h4><b>VERDANT TECHNOLLOGIES LLP</b></h4>
+					<p>6 D Calve Chateau, 808 Poonamalle High Road, Kilpauk, Chennai - 600010.</p>
+					<p><i class="fa fa-phone-square" aria-hidden="true"></i> +91 44 2648 0033/44</p>
+					<p><i class="fa fa-fax" aria-hidden="true"></i> +91 44 4282 5400</p>
+					<p><i class="fa fa-2x fa-mobile" aria-hidden="true"></i> +91 94440 51015</p>
+					<p><i class="fa fa-globe" aria-hidden="true"></i> www.verdanttech.in</p>
+					<p><i class="fa fa-envelope" aria-hidden="true"></i> mail@verdanttech.in</p>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h2 class="panel-title">Contact Us</h2>
+					</div>
+					<div ng-controller="ContactController" class="panel-body">
+						<p ng-class="result" style="padding: 15px; margin: 0;">{{ resultMessage }} <br /></p>
+						<form name="contactform" class="form-horizontal" role="form">
+							<div class="form-group" ng-class="{ 'has-error': contactform.inputName.$invalid && submitted }">
+								<label for="inputName" class="col-lg-2 control-label">Name</label>
+								<div class="col-lg-10">
+									<input ng-model="formData.inputName" type="text" class="form-control" id="inputName" name="inputName" placeholder="Your Name" required>
+								</div>
+							</div>
+							<div class="form-group" ng-class="{ 'has-error': contactform.inputEmail.$invalid && submitted }">
+								<label for="inputEmail" class="col-lg-2 control-label">Email</label>
+								<div class="col-lg-10">
+									<input ng-model="formData.inputEmail" type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Your Email" required>
+								</div>
+							</div>
+							<div class="form-group" ng-class="{ 'has-error': contactform.inputSubject.$invalid && submitted }">
+								<label for="inputSubject" class="col-lg-2 control-label">Subject</label>
+								<div class="col-lg-10">
+									<input ng-model="formData.inputSubject" type="text" class="form-control" id="inputSubject" name="inputSubject" placeholder="Subject Message" required>
+								</div>
+							</div>
+							<div class="form-group" ng-class="{ 'has-error': contactform.inputMessage.$invalid && submitted }">
+								<label for="inputMessage" class="col-lg-2 control-label">Message</label>
+								<div class="col-lg-10">
+									<textarea ng-model="formData.inputMessage" class="form-control" rows="4" id="inputMessage" name="inputMessage" placeholder="Your message..." required></textarea>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-lg-offset-2 col-lg-10">
+									<button class="btn btn-default" ng-click="submit(contactform)" ng-disabled="submitButtonDisabled">
+									Send Message
+									</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-md-6 maps">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7772.481285195648!2d80.23446472646758!3d13.08392966345918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a526678dadf9ab5%3A0xf57a2071e1b6a4fb!2sKilpauk%2C+Chennai%2C+Tamil+Nadu!5e0!3m2!1sen!2sin!4v1503256860508" width="500" height="390" frameborder="0" style="border:0" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+</div>

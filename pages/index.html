@@ -1,0 +1,92 @@
+<div style="position:absolute; z-index:100; margin-top:-199px;"><img src="_img/BannerCasing.png" alt=""></div>
+<div class="row" id="carasoul">
+	<div class="container">
+		<div ng-controller="CarasoulSlides" id="slides_control">
+        	<div style="height:357px;">
+            	<div uib-carousel no-transition="myTransition" interval="myInterval" active="activeSlide">
+                	<div uib-slide ng-repeat="slide in slides" index="$index">
+	                    <img ng-src="{{slide.image}}" style="margin:auto;">
+	                    <div class="carousel-caption">
+	                        <h4>{{slide.caption}}</h4>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+</div>
+
+
+<div class="row">
+	<div class="container">
+		<div class="col-md-12 contentTab">
+			<div class="bug"></div>
+			<div class="articleconttop"></div>
+
+			<!-- 1st tab content -->
+            <div class="articlecont">
+                <div class="col-md-12 no-padding">
+                    <div class="col-md-4 no-padding">
+                    	<div class="col-md-12 cnticon top-padding"><img width="150" src="_img/flamebloclogo.svg" alt=""></div>
+                        <div class="articletitle">------</div>
+                        <div class="articletxt"><p>The Flamebloc GS Portfolio of products consists of a range of specialized products designed to offer Passive fire retardant protection to a broad range of substrates including wood, natural and synthetic fabrics, leather, paper, metal and plastics. All Products can be applied by roll, dip, spray, or brush and can be top coated for added protection while still maintaining their primary utility.</p></div>
+                    </div>
+                    <div class="col-md-4 no-padding">
+						<div class="col-md-12 cnticon"><i class="fa fa-4x fa-film" aria-hidden="true"></i></div>
+                        <div class="articletitle">&nbsp;</div>
+						<div class="col-md-12 text-center top-padding">
+	                    	<iframe height="200" src="https://www.youtube.com/embed/u4ARmJXosL0?autoplay=0&amp;showinfo=0&amp;controls=0" frameborder="0" allowfullscreen></iframe>
+                    	</div>
+                    </div>
+                    <div class="col-md-4 no-padding">
+                    	<div class="col-md-12 cnticon top-padding"><img width="220" src="_img/aqua.png" alt=""></div>
+                        <div class="articletitle">------</div>
+                        <div class="articletxt"><p>Aqua Conditioners manufactures all its products in Australia using proprietory technology, which is well tested and used by industries and homes, since 1983. Our products are manufactured using a technologically advanced manufacturing and servicing facility to provide customers with the best equipment at the best possible price. Thus once installed there are no worries about the unit failing or needing maintenance.</p></div>
+                    </div>
+                </div>
+            </div>
+            <!-- end of tab content -->
+
+			<!-- tab2 content -->
+<!--             <div class="articlecont">
+                <div class="col-md-12 no padding">
+                    <div class="artcntbuck">
+                        <div class="col-md-2"><img src="_img/buckman.png" alt=""></div>
+                        <div class="col-md-10">
+                            <div class="articletxt">At Buckman we understand the inherent risks of our industry. That’s why our Global Safety & Environmental Department engages in a disciplined program of risk analysis and planning. You can rest assured that we:</div>
+                            <ul>
+                                <li> Set and follow strict protocols for the safe operation of our plants and the safe handling of our products.</li>
+                                <li> Perform site vulnerability analyses to ensure security and reduce the potential for harm to people and the communities we share.</li>
+                                <li> Focus on employee health, implementing a global medical and health testing standard to reduce serious illness in the workplace and the related health care costs.</li>
+                            </ul>
+                            <div class="articletxt">Thanks to these and other practices, Buckman has seen an overall 61% decrease in recordable injuries since 1999, and an 80% decrease in the number of occupational injuries resulting in lost time.</div>                            
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- end of tab2 -->
+		</div>
+
+            <!-- tab3 -->
+
+            <div class="articlecont" style="background-color:none;">
+            	<div class="articleconttop"></div>
+                <div class="col-md-12 no-padding">
+                    <div class="col-md-12"><div class="articletitle2L">Products</div></div>
+                    <div class="col-md-6" style="border-right:1px solid #ccc;">
+                        <div><img src="_img/flameBlock.svg" alt=""></div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="col-md-6" style="margin-top:30px;"><img src="_img/aqua.png" class="img-responsive" alt=""></div>
+                        <div class="col-md-6">
+                            <div class="articletxt">Aqua Conditioners manufactures all its products in Australia using proprietory technology, which is well tested and used by industry and homes, since 1983.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end of tab3 -->
+
+
+	</div>
+</div>
+
