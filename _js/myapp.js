@@ -101,7 +101,7 @@ app.controller('AccordionCtrl', function ($scope) {
 // Contact form Application
 
 app.controller('ContactController', function ($scope, $http) {
-    $scope.result = 'hidden'
+    $scope.result = 'hidden';
     $scope.resultMessage;
     $scope.formData; //formData is an object holding the name, email, subject, and message
     $scope.submitButtonDisabled = false;
@@ -111,21 +111,25 @@ app.controller('ContactController', function ($scope, $http) {
         $scope.submitButtonDisabled = true;
         if (contactform.$valid) {
             $http({
-                method  : 'POST',
+                method : 'POST',
                 url     : './contact-form.php',
                 data    : $.param($scope.formData),  //param method from jQuery
                 headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  //set the headers so angular passing info as form data (not request payload)
-            }).success(function(data){
-                console.log(data);
-                if (data.success) { //success comes from the return json object
+            }).then(function(data){
+                var res = data.data;
+                if (res.success) {
                     $scope.submitButtonDisabled = true;
-                    $scope.resultMessage = data.message;
+                    $scope.resultMessage = res.message;
                     $scope.result='bg-success';
                 } else {
                     $scope.submitButtonDisabled = false;
-                    $scope.resultMessage = data.message;
+                    $scope.resultMessage = res.message;
                     $scope.result='bg-danger';
                 }
+            }, function(data) {
+                $scope.submitButtonDisabled = false;
+                $scope.resultMessage = data.data.message;
+                $scope.result='bg-danger';
             });
         } else {
             $scope.submitButtonDisabled = false;
