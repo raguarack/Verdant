@@ -2,6 +2,7 @@
 require_once 'phpmailer/PHPMailerAutoload.php';
 
 if (isset($_POST['inputName']) && isset($_POST['inputEmail']) && isset($_POST['inputSubject']) && isset($_POST['inputMessage'])) {
+
     //check if any of the inputs are empty
     if (empty($_POST['inputName']) || empty($_POST['inputEmail']) || empty($_POST['inputSubject']) || empty($_POST['inputMessage'])) {
         $data = array('success' => false, 'message' => 'Please fill out the form completely.');
