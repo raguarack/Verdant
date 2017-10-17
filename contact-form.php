@@ -1,5 +1,11 @@
 <?php
-require_once 'phpmailer/PHPMailerAutoload.php';
+// Import PHPMailer classes into the global namespace
+// These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+//Load composer's autoloader
+require 'vendor/autoload.php';
 
 if (isset($_POST['inputName']) && isset($_POST['inputEmail']) && isset($_POST['inputSubject']) && isset($_POST['inputMessage'])) {
 
@@ -13,9 +19,14 @@ if (isset($_POST['inputName']) && isset($_POST['inputEmail']) && isset($_POST['i
     //create an instance of PHPMailer
     $mail = new PHPMailer();
 
-    $mail->From = $_POST['inputEmail'];
-    $mail->FromName = $_POST['inputName'];
-    $mail->AddAddress('ragunath@arack.in'); //recipient 
+    // Add the SMTP details here
+    // $mail->isSMTP();
+    // $mail->Host = 'localhost';
+    // $mail->Port = 3000;
+
+    $mail->setFrom($_POST['inputEmail'], $_POST['inputName']);
+    $mail->addAddress('ragunath@arack.in'); //recipient 
+    $mail->isHTML(true);
     $mail->Subject = $_POST['inputSubject'];
     $mail->Body = "Name: " . $_POST['inputName'] . "\r\n\r\nMessage: " . stripslashes($_POST['inputMessage']);
 
@@ -31,10 +42,7 @@ if (isset($_POST['inputName']) && isset($_POST['inputEmail']) && isset($_POST['i
 
     $data = array('success' => true, 'message' => 'Thanks! We have received your message.');
     echo json_encode($data);
-
 } else {
-
     $data = array('success' => false, 'message' => 'Please fill out the form completely.');
     echo json_encode($data);
-
 }
